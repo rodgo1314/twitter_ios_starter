@@ -87,13 +87,19 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nN0-S8-mBe" userLabel="Fav Button">
+                                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nN0-S8-mBe" userLabel="Fav Button">
                                             <rect key="frame" x="319" y="99" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="30" id="XK3-X2-DwH"/>
                                                 <constraint firstAttribute="height" constant="30" id="Zsj-cf-sGJ"/>
                                             </constraints>
-                                            <state key="normal" image="favor-icon"/>
+                                            <state key="normal" image="favor-icon">
+                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="favoriteTweet:" destination="WcY-nV-CKW" eventType="touchUpInside" id="g4C-A7-BbS"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Icm-7h-Iur" userLabel="Retweet button">
                                             <rect key="frame" x="279" y="99" width="30" height="30"/>
@@ -102,6 +108,9 @@
                                                 <constraint firstAttribute="width" constant="30" id="PoL-em-VWS"/>
                                             </constraints>
                                             <state key="normal" image="retweet-icon"/>
+                                            <connections>
+                                                <action selector="retweet:" destination="WcY-nV-CKW" eventType="touchUpInside" id="oLM-cW-C8w"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -121,7 +130,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="favButton" destination="nN0-S8-mBe" id="Eig-4k-GrG"/>
                                     <outlet property="profileImageView" destination="p0m-Wm-zDC" id="rJC-ZM-K0W"/>
+                                    <outlet property="retweetButton" destination="Icm-7h-Iur" id="z8U-7o-5hz"/>
                                     <outlet property="tweetContentLabel" destination="jqV-rP-zKb" id="sbU-Cp-5YL"/>
                                     <outlet property="userNameLabel" destination="JoA-Io-1gA" id="5zm-AK-MAL"/>
                                 </connections>
